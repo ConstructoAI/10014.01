@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Soumission budgétaire pour revêtements extérieurs - 16 logements St-Félix-de-Valois">
+    <meta name="author" content="Groupe Perreault">
+    <title>SOUMISSION BUDGÉTAIRE - Revêtements Extérieurs 16 Logements</title>
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary-color: #4b5563;
+            --primary-light: #6b7280;
+            --primary-dark: #374151;
+            --primary-bg: #f9fafb;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --success-color: #6b7280;
+            --success-hover: #4b5563;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition-base: all 0.3s ease;
+        }
+
+        /* Reset et Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #333;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 8.5in;
+            margin: 20px auto;
+            background: white;
+            box-shadow: var(--shadow-lg);
+            padding: 0.4in;
+            position: relative;
+        }
+
+        /* Barre de contrôle */
+        .control-bar {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 20px 15px;
+            margin: -0.4in -0.4in 20px -0.4in;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .control-bar h3 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            opacity: 0.95;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn {
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: var(--transition-base);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            min-width: 140px;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-btn:active {
+            transform: translateY(0) scale(1);
+        }
+
+        .control-btn.danger {
+            background: rgba(239, 68, 68, 0.8);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+
+        .control-btn.danger:hover {
+            background: rgba(220, 38, 38, 0.9);
+        }
+
+        .control-btn.success {
+            background: rgba(34, 197, 94, 0.9);
+            border-color: rgba(34, 197, 94, 0.5);
+        }
+
+        .control-btn.success:hover {
+            background: rgba(22, 163, 74, 1);
+        }
+
+        /* Paramètres */
+        .settings-row {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .settings-row label {
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 500;
+        }
+
+        .settings-row input[type="number"] {
+            width: 60px;
+            padding: 4px 8px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 3px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-weight: 600;
+        }
+
+        .settings-row input[type="number"]:focus {
+            outline: none;
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+
+        .company-info {
+            text-align: right;
+            font-size: 10px;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .company-name {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 4px;
+            color: var(--primary-dark);
+        }
+
+        /* Title */
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 15px 0 8px 0;
+            text-align: left;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 15px;
+            margin-top: 8px;
+        }
+        
+        /* Project Info */
+        .project-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            padding: 10px;
+            background: #fafafa;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .info-section h4 {
+            font-weight: bold;
+            font-size: 10px;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .info-section p {
+            font-size: 10px;
+            line-height: 1.4;
+            margin-bottom: 3px;
+        }
+
+        /* Tables */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            table-layout: fixed;
+            background: white;
+        }
+
+        .table-header th {
+            padding: 8px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 10px;
+            border-right: 1px solid #777;
+            vertical-align: middle;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
+        }
+
+        .table-header th:nth-child(1) { width: 50%; text-align: left; }
+        .table-header th:nth-child(2) { width: 10%; text-align: center; }
+        .table-header th:nth-child(3) { width: 18%; text-align: right; }
+        .table-header th:nth-child(4) { width: 18%; text-align: right; }
+        .table-header th:nth-child(5) { width: 4%; text-align: center; border-right: none; }
+
+        .table tbody tr:nth-child(even) { background: #f9fafb; }
+        .table tbody tr:hover { background: #f3f4f6; }
+
+        .table td {
+            padding: 6px 8px;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            font-size: 10px;
+            vertical-align: top;
+            word-wrap: break-word;
+        }
+
+        .table td:nth-child(1) { width: 50%; text-align: left; }
+        .table td:nth-child(2) { width: 10%; text-align: center; }
+        .table td:nth-child(3) { width: 18%; text-align: right; }
+        .table td:nth-child(4) { width: 18%; text-align: right; font-weight: bold; }
+        .table td:nth-child(5) { width: 4%; text-align: center; border-right: none; }
+
+        .item-description { 
+            color: #333; 
+            line-height: 1.3;
+            position: relative;
+        }
+        
+        .item-details { 
+            font-size: 9px; 
+            color: #666; 
+            display: block; 
+            margin-top: 3px; 
+            font-style: italic; 
+            line-height: 1.3; 
+            font-weight: normal; 
+        }
+
+        /* Champs de description éditables */
+        .item-title-input {
+            font-weight: bold;
+            color: #333;
+            border: none;
+            background: transparent;
+            width: 100%;
+            font-size: 10px;
+            line-height: 1.3;
+            padding: 2px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .item-title-input:hover {
+            background: rgba(75, 85, 99, 0.03);
+            cursor: pointer;
+        }
+
+        .item-title-input:focus {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 2px;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.05);
+        }
+
+        .item-details-input {
+            font-size: 9px;
+            color: #666;
+            border: none;
+            background: transparent;
+            width: 100%;
+            line-height: 1.3;
+            font-style: italic;
+            font-weight: normal;
+            padding: 2px;
+            margin-top: 3px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 20px;
+        }
+
+        .item-details-input:hover {
+            background: rgba(75, 85, 99, 0.03);
+            cursor: pointer;
+        }
+
+        .item-details-input:focus {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 2px;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.05);
+            font-style: normal;
+        }
+
+        /* Titres de catégories éditables */
+        .category-title-input {
+            font-weight: bold;
+            color: var(--primary-dark);
+            font-size: 11px;
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 2px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        
+        .category-title-input:hover {
+            background: rgba(75, 85, 99, 0.03);
+            cursor: pointer;
+        }
+        
+        .category-title-input:focus {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 2px;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.05);
+        }
+
+        /* Champs de quantité éditables */
+        .quantity-input {
+            width: 100%;
+            padding: 4px 6px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 10px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            transition: var(--transition-base);
+            background: white;
+        }
+
+        .quantity-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: var(--primary-bg);
+            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.1);
+        }
+        
+        .category-header-row td { 
+            background: #f9fafb; 
+            font-weight: bold; 
+            padding: 6px 8px !important; 
+            color: var(--primary-dark); 
+            font-size: 11px;
+        }
+        
+        .subtotal-row td { 
+            background: #f3f4f6 !important; 
+            font-weight: bold !important; 
+            padding: 6px 8px !important; 
+        }
+        
+        .total-row td { 
+            background: var(--primary-bg) !important; 
+            font-weight: bold !important; 
+            font-size: 11px !important; 
+            border-top: 2px solid var(--primary-color); 
+        }
+
+        /* Inputs */
+        .amount-input {
+            width: 100%;
+            padding: 4px 6px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 10px;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            transition: var(--transition-base);
+        }
+
+        .amount-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: var(--primary-bg);
+            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.1);
+        }
+
+        .amount-input.error {
+            border-color: var(--danger-color);
+            background: #fef2f2;
+        }
+
+        /* Header inputs */
+        .header-input {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-size: 11px;
+            background: #f9f9f9;
+            transition: var(--transition-base);
+        }
+
+        .header-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: white;
+            box-shadow: 0 0 0 2px rgba(75, 85, 99, 0.1);
+        }
+
+        .date-input {
+            width: 140px;
+        }
+
+        /* Info inputs */
+        .info-input {
+            border: 1px solid #e5e7eb;
+            border-radius: 3px;
+            padding: 4px 8px;
+            font-size: 10px;
+            background: white;
+            transition: var(--transition-base);
+            width: 100%;
+            font-family: inherit;
+            min-width: 40px;
+        }
+
+        .info-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(75, 85, 99, 0.1);
+        }
+
+        .info-input.inline {
+            display: inline;
+            width: auto;
+        }
+
+        .info-input::placeholder {
+            color: #9ca3af;
+            font-style: italic;
+            font-size: 9px;
+        }
+
+        strong .info-input {
+            font-weight: 600;
+        }
+
+        .amount-display {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #111;
+        }
+
+        /* Checkbox pour masquer */
+        .hide-checkbox {
+            cursor: pointer;
+            transform: scale(1.2);
+            accent-color: var(--primary-color);
+        }
+
+        /* Section cachée */
+        .section-row.hidden {
+            display: none;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 15px;
+            transition: opacity 0.3s;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .section.hidden-section {
+            display: none;
+        }
+
+        /* Récapitulatif */
+        .summary-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .summary-box h4 {
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .summary-table {
+            width: 100%;
+            font-size: 11px;
+        }
+
+        .summary-table td {
+            padding: 6px 10px;
+        }
+
+        .summary-table .label {
+            text-align: right;
+            padding-right: 20px;
+            color: #555;
+        }
+
+        .summary-table .value {
+            text-align: right;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            width: 150px;
+            color: #111;
+        }
+
+        .summary-table .total-row {
+            border-top: 2px solid var(--primary-color);
+            font-size: 14px;
+            background: white;
+        }
+
+        /* Notes and exclusions */
+        .exclusions, .conditions {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .exclusions h4, .conditions h4 { 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+            color: var(--primary-dark); 
+            font-size: 11px; 
+        }
+        
+        .exclusions ul, .conditions ul { 
+            margin-left: 15px; 
+        }
+        
+        .exclusions li, .conditions li { 
+            margin-bottom: 4px; 
+            font-size: 9px; 
+            line-height: 1.4; 
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 9px;
+            color: #666;
+            border-top: 2px solid var(--primary-color);
+            padding-top: 15px;
+        }
+        
+        .page-number { 
+            text-align: right; 
+            margin-top: 20px; 
+            padding-top: 10px; 
+            font-size: 9px; 
+            color: #999; 
+            border-top: 1px solid #ddd;
+        }
+
+        /* Indicateur de sauvegarde */
+        .save-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: var(--success-color);
+            color: white;
+            border-radius: 6px;
+            box-shadow: var(--shadow-lg);
+            display: none;
+            z-index: 1001;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .save-indicator.show {
+            display: block;
+            animation: fadeInOut 2s ease;
+        }
+
+        .save-indicator.error {
+            background: var(--danger-color);
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .loading-overlay.show {
+            display: flex;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mode impression */
+        @media print {
+            body {
+                background: white;
+                font-size: 9px;
+            }
+            
+            .control-bar {
+                display: none !important;
+            }
+            
+            .loading-overlay {
+                display: none !important;
+            }
+            
+            .save-indicator {
+                display: none !important;
+            }
+            
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0.3in;
+                max-width: 100%;
+            }
+            
+            .hide-checkbox {
+                display: none !important;
+            }
+            
+            .amount-input, .header-input, .info-input, .quantity-input {
+                border: none !important;
+                background: transparent !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+            
+            .table-header th:nth-child(5),
+            .table td:nth-child(5) {
+                display: none !important;
+            }
+            
+            .table-header th:nth-child(1) { width: 52% !important; }
+            .table td:nth-child(1) { width: 52% !important; }
+            
+            .table-header th {
+                background: var(--primary-dark) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .category-header-row td,
+            .subtotal-row td,
+            .total-row td,
+            .summary-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .summary-box {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 0.2in;
+            }
+            
+            .project-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .control-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .control-btn {
+                width: 100%;
+                justify-content: center;
+                min-width: auto;
+            }
+            
+            .settings-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            
+            .settings-row label {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Barre de contrôle -->
+    <div class="control-bar" id="controlBar">
+        <h3>⚙️ Contrôles de la soumission</h3>
+        <div class="control-buttons">
+            <button class="control-btn success" onclick="APP.calculateAll()" title="Recalculer tous les montants">
+                💰 Recalculer tout
+            </button>
+            <button class="control-btn" onclick="APP.toggleAllSections()" title="Afficher ou masquer toutes les sections">
+                👁️ Afficher/Masquer tout
+            </button>
+            <button class="control-btn" onclick="APP.saveData()" title="Sauvegarder dans le navigateur">
+                💾 Sauvegarder
+            </button>
+            <button class="control-btn" onclick="APP.loadData()" title="Charger les données sauvegardées">
+                📂 Charger
+            </button>
+            <button class="control-btn danger" onclick="APP.resetAll()" title="Réinitialiser tous les champs">
+                🔄 Réinitialiser
+            </button>
+            <button class="control-btn" onclick="window.print()" title="Imprimer le document">
+                🖨️ Imprimer
+            </button>
+        </div>
+        <div class="settings-row">
+            <label>
+                💼 Profit (%):
+                <input type="number" id="profitRate" value="15" min="0" max="50" step="0.5" 
+                       onchange="APP.updateProfitRate()" title="Taux de profit (0-50%)">
+            </label>
+            <label>
+                📊 Frais généraux (%):
+                <input type="number" id="adminRate" value="12" min="0" max="20" step="0.5" 
+                       onchange="APP.updateAdminRate()" title="Frais généraux (0-20%)">
+            </label>
+            <label>
+                ⚠️ Contingences (%):
+                <input type="number" id="contingencyRate" value="8" min="0" max="25" step="0.5" 
+                       onchange="APP.updateContingencyRate()" title="Contingences pour imprévus (0-25%)">
+            </label>
+        </div>
+    </div>
+
+    <!-- Indicateur de sauvegarde -->
+    <div class="save-indicator" id="saveIndicator">
+        <span id="saveMessage">✔ Sauvegarde automatique</span>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="company-info">
+                <div class="company-name">Groupe Perreault</div>
+                103, rue Normandie<br>
+                Repentigny (Québec) J6A 6B9<br>
+                C: 514.927.5932 | T: 514.589.5932<br>
+                info@groupeperreault.ca<br>
+                RBQ : 5763-7159-01
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="title">SOUMISSION - REVÊTEMENTS EXTÉRIEURS</div>
+        <div class="subtitle">
+            Soumission #<input type="text" id="numeroSoumission" class="header-input" value="2025-REV-001" 
+                              style="width: 120px;" maxlength="20" onchange="APP.autoSave()">, 
+            <input type="date" id="dateSoumission" class="header-input date-input" onchange="APP.autoSave()">
+        </div>
+
+        <!-- Project Info -->
+        <div class="project-info">
+            <div class="info-section">
+                <h4>Soumission pour:</h4>
+                <p><strong><input type="text" class="info-input" id="nomClient" 
+                                value="Projet résidentiel 16 logements" maxlength="100" onchange="APP.autoSave()"></strong></p>
+                <p><input type="text" class="info-input" id="adresseClient" 
+                         value="À déterminer" maxlength="200" onchange="APP.autoSave()"></p>
+                <p>
+                    <input type="text" class="info-input inline" id="villeClient" 
+                          value="St-Félix-de-Valois" style="width: 60%;" maxlength="50" onchange="APP.autoSave()"> (Québec) 
+                    <input type="text" class="info-input inline" id="codePostalClient" 
+                          placeholder="J0K 2M0" style="width: 30%;" maxlength="7" onchange="APP.autoSave()">
+                </p>
+            </div>
+            <div class="info-section">
+                <h4>Projet</h4>
+                <p><strong><input type="text" class="info-input" id="nomProjet" 
+                                value="Revêtements extérieurs complets" maxlength="100" onchange="APP.autoSave()"></strong></p>
+                <p><input type="text" class="info-input" id="typeConstruction" 
+                         value="Multi-logements (16 unités)" maxlength="100" onchange="APP.autoSave()"></p>
+                <p>
+                    Superficie totale: <input type="text" class="info-input inline" id="superficie" 
+                                     value="6,960" style="width: 60px;" maxlength="10" onchange="APP.autoSave()"> pi² | 
+                    Durée: <input type="text" class="info-input inline" id="etages" 
+                                  value="5 sem" style="width: 50px;" maxlength="10" onchange="APP.autoSave()">
+                </p>
+                <p>Type: <input type="text" class="info-input inline" id="typeFondation" 
+                                   value="Canexel (88.7%) + Brique (11.3%)" style="width: 200px;" maxlength="100" onchange="APP.autoSave()"></p>
+            </div>
+            <div class="info-section">
+                <h4>Contact Principal</h4>
+                <p><strong><input type="text" class="info-input" id="nomContact" 
+                                placeholder="[Nom du contact], [Titre]" maxlength="100" onchange="APP.autoSave()"></strong></p>
+                <p>C: 514.927.5932 | T: 514.589.5932</p>
+                <p>info@groupeperreault.ca</p>
+                <p>Chargé de projet: <input type="text" class="info-input inline" id="chargeProjet" 
+                                          placeholder="[Nom]" style="width: 100px;" maxlength="50" onchange="APP.autoSave()"></p>
+            </div>
+        </div>
+
+        <!-- Section 1 - Matériaux de revêtement -->
+        <div class="section" data-section="1">
+            <table class="table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantité</th>
+                        <th>Coût unitaire</th>
+                        <th>Coût total</th>
+                        <th>☑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-header-row">
+                        <td colspan="5">
+                            <input type="text" class="category-title-input" value="1.0 - MATÉRIAUX DE REVÊTEMENT" onchange="APP.autoSave()">
+                        </td>
+                    </tr>
+                    <tr class="section-row" data-item="1-1">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="1-1" value="Canexel couleur Granite" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="1-1" placeholder="Description détaillée" onchange="APP.autoSave()">Revêtement principal - 4,425 pi² (63.6% du projet)</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="1-1" value="4425" min="0" step="0.01" onchange="APP.updateQuantity(this)" oninput="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="1-1" value="7.50" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)" oninput="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="1-1">33,187.50$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="1-2">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="1-2" value="Canexel couleur Bois" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="1-2" placeholder="Description détaillée" onchange="APP.autoSave()">Revêtement secondaire - 1,749 pi² (25.1% du projet)</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="1-2" value="1749" min="0" step="0.01" onchange="APP.updateQuantity(this)" oninput="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="1-2" value="7.50" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)" oninput="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="1-2">13,117.50$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="1-3">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="1-3" value="Accessoires Canexel" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="1-3" placeholder="Description détaillée" onchange="APP.autoSave()">Coins, moulures, jonctions (15% des matériaux)</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="1-3" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="1-3" value="6946" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="1-3">6,946.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="1-4">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="1-4" value="Brique grise standard" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="1-4" placeholder="Description détaillée" onchange="APP.autoSave()">463 pi² (6.7% du projet) - Façades avant et latérales</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="1-4" value="463" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="1-4" value="8.50" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="1-4">3,935.50$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="1-5">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="1-5" value="Brique grise très pâle" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="1-5" placeholder="Description détaillée" onchange="APP.autoSave()">323 pi² (4.6% du projet) - Façades avant et arrière</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="1-5" value="323" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="1-5" value="9.50" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="1-5">3,068.50$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="1-6">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="1-6" value="Mortier et attaches pour maçonnerie" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="1-6" placeholder="Description détaillée" onchange="APP.autoSave()">Mortier Type N (55 sacs) + Attaches inox (3,930 unités)</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="1-6" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="1-6" value="2563" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="1-6">2,563.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="3">Sous-total Matériaux de Revêtement</td>
+                        <td class="amount-display" data-subtotal="1">62,818.00$</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 2 - Système d'enveloppe -->
+        <div class="section" data-section="2">
+            <table class="table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantité</th>
+                        <th>Coût unitaire</th>
+                        <th>Coût total</th>
+                        <th>☑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-header-row">
+                        <td colspan="5">2.0 - SYSTÈME D'ENVELOPPE ET ISOLATION</td>
+                    </tr>
+                    <tr class="section-row" data-item="2-1">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="2-1" value="Membrane pare-air Tyvek CommercialWrap" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="2-1" placeholder="Description détaillée" onchange="APP.autoSave()">7,500 pi² - Protection complète de l'enveloppe</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="2-1" value="7500" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="2-1" value="0.35" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="2-1">2,625.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="2-2">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="2-2" value="Membrane de drainage (derrière brique)" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="2-2" placeholder="Description détaillée" onchange="APP.autoSave()">850 pi² pour sections de maçonnerie</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="2-2" value="850" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="2-2" value="0.50" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="2-2">425.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="2-3">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="2-3" value="Isolation XPS R-4 panneaux rigides" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="2-3" placeholder="Description détaillée" onchange="APP.autoSave()">7,200 pi² - Isolation thermique continue</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="2-3" value="7200" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="2-3" value="1.85" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="2-3">13,320.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="2-4">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="2-4" value="Fourrures et système de fixation" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="2-4" placeholder="Description détaillée" onchange="APP.autoSave()">Fourrures 1"x3" traité + vis et fixations spécialisées</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="2-4" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="2-4" value="4040" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="2-4">4,040.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="3">Sous-total Système d'Enveloppe</td>
+                        <td class="amount-display" data-subtotal="2">20,410.00$</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 3 - Composantes additionnelles -->
+        <div class="section" data-section="3">
+            <table class="table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantité</th>
+                        <th>Coût unitaire</th>
+                        <th>Coût total</th>
+                        <th>☑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-header-row">
+                        <td colspan="5">3.0 - COMPOSANTES ADDITIONNELLES</td>
+                    </tr>
+                    <tr class="section-row" data-item="3-1">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="3-1" value="Solins de tête et de base" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="3-1" placeholder="Description détaillée" onchange="APP.autoSave()">320 pi.lin. solins tête + 280 pi.lin. solins base</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="3-1" value="600" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="3-1" value="11.07" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="3-1">6,642.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="3-2">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="3-2" value="Chantepleures et coins métalliques" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="3-2" placeholder="Description détaillée" onchange="APP.autoSave()">40 chantepleures + 48 coins préformés</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="3-2" value="88" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="3-2" value="14.55" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="3-2">1,280.40$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="3-3">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="3-3" value="Calfeutrage polyuréthane et fond de joint" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="3-3" placeholder="Description détaillée" onchange="APP.autoSave()">36 tubes calfeutrant + 400 pi.lin. fond de joint</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="3-3" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="3-3" value="704" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="3-3">704.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="3-4">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="3-4" value="Pierre décorative (base du bâtiment)" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="3-4" placeholder="Description détaillée" onchange="APP.autoSave()">800 pi² - Finition architecturale de prestige</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="3-4" value="800" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="3-4" value="14.00" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="3-4">11,200.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="3-5">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="3-5" value="Soffites et fascias en aluminium" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="3-5" placeholder="Description détaillée" onchange="APP.autoSave()">650 pi.lin. - Finition complète des débords de toit</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="3-5" value="650" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="3-5" value="28.00" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="3-5">18,200.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="3-6">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="3-6" value="Gouttières et descentes pluviales" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="3-6" placeholder="Description détaillée" onchange="APP.autoSave()">Système complet aluminium 5" avec accessoires</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="3-6" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="3-6" value="8760" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="3-6">8,760.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="3">Sous-total Composantes Additionnelles</td>
+                        <td class="amount-display" data-subtotal="3">46,786.40$</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 4 - Main-d'œuvre -->
+        <div class="section" data-section="4">
+            <table class="table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantité</th>
+                        <th>Coût unitaire</th>
+                        <th>Coût total</th>
+                        <th>☑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-header-row">
+                        <td colspan="5">4.0 - MAIN-D'ŒUVRE SPÉCIALISÉE</td>
+                    </tr>
+                    <tr class="section-row" data-item="4-1">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="4-1" value="Installation Canexel" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="4-1" placeholder="Description détaillée" onchange="APP.autoSave()">2 installateurs (310h) + 1 manœuvre (155h) - 6,174 pi²</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="4-1" value="465" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="4-1" value="64.65" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="4-1">30,042.25$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="4-2">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="4-2" value="Maçonnerie (brique)" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="4-2" placeholder="Description détaillée" onchange="APP.autoSave()">2 maçons (196h) + 1 manœuvre (98h) - 786 pi²</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="4-2" value="294" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="4-2" value="73.33" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="4-2">21,559.02$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="4-3">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="4-3" value="Préparation et finition" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="4-3" placeholder="Description détaillée" onchange="APP.autoSave()">Membranes (40h) + Fourrures (60h) + Solins/calfeutrage (80h)</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="4-3" value="180" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="4-3" value="38.89" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="4-3">7,000.20$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="4-4">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="4-4" value="Supervision et contremaître" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="4-4" placeholder="Description détaillée" onchange="APP.autoSave()">96 heures @ 55$/h - Coordination et contrôle qualité</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="4-4" value="96" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="4-4" value="55.00" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="4-4">5,280.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="3">Sous-total Main-d'œuvre</td>
+                        <td class="amount-display" data-subtotal="4">63,881.47$</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 5 - Équipements et frais connexes -->
+        <div class="section" data-section="5">
+            <table class="table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantité</th>
+                        <th>Coût unitaire</th>
+                        <th>Coût total</th>
+                        <th>☑</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-header-row">
+                        <td colspan="5">5.0 - ÉQUIPEMENTS ET FRAIS CONNEXES</td>
+                    </tr>
+                    <tr class="section-row" data-item="5-1">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="5-1" value="Échafaudages modulaires" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="5-1" placeholder="Description détaillée" onchange="APP.autoSave()">6 sections 5'x5' pour 5 semaines</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="5-1" value="30" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="5-1" value="60.00" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="5-1">1,800.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="5-2">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="5-2" value="Nacelle articulée 45'" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="5-2" placeholder="Description détaillée" onchange="APP.autoSave()">Location 8 jours pour zones difficiles d'accès</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="5-2" value="8" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="5-2" value="450.00" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="5-2">3,600.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="5-3">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="5-3" value="Monte-matériaux et outils spécialisés" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="5-3" placeholder="Description détaillée" onchange="APP.autoSave()">Location 3 semaines + outils de coupe spécialisés</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="5-3" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="5-3" value="2600" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="5-3">2,600.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="5-4">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="5-4" value="Transport et manutention" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="5-4" placeholder="Description détaillée" onchange="APP.autoSave()">8 livraisons de matériaux @ 350$/voyage</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="5-4" value="8" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="5-4" value="350.00" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="5-4">2,800.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="section-row" data-item="5-5">
+                        <td class="item-description">
+                            <input type="text" class="item-title-input" data-row="5-5" value="Gestion des déchets et protection" placeholder="Titre de l'item" onchange="APP.autoSave()">
+                            <textarea class="item-details-input" data-row="5-5" placeholder="Description détaillée" onchange="APP.autoSave()">Conteneur 4 semaines + bâches + équipement sécurité</textarea>
+                        </td>
+                        <td><input type="number" class="quantity-input" data-row="5-5" value="1" min="0" step="0.01" onchange="APP.updateQuantity(this)"></td>
+                        <td><input type="number" class="amount-input" data-row="5-5" value="2700" 
+                                 min="0" max="99999999" step="0.01" onchange="APP.calculateRow(this)"></td>
+                        <td class="amount-display" data-total="5-5">2,700.00$</td>
+                        <td><input type="checkbox" class="hide-checkbox" checked onchange="APP.toggleRow(this)"></td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="3">Sous-total Équipements</td>
+                        <td class="amount-display" data-subtotal="5">13,500.00$</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Récapitulatif des coûts -->
+        <div class="summary-box">
+            <h4>📊 RÉCAPITULATIF DES COÛTS</h4>
+            <table class="summary-table">
+                <tr>
+                    <td class="label">1.0 - Matériaux de Revêtement:</td>
+                    <td class="value" id="recap-1">62,818.00$</td>
+                </tr>
+                <tr>
+                    <td class="label">2.0 - Système d'Enveloppe:</td>
+                    <td class="value" id="recap-2">20,410.00$</td>
+                </tr>
+                <tr>
+                    <td class="label">3.0 - Composantes Additionnelles:</td>
+                    <td class="value" id="recap-3">46,786.40$</td>
+                </tr>
+                <tr>
+                    <td class="label">4.0 - Main-d'œuvre Spécialisée:</td>
+                    <td class="value" id="recap-4">63,881.47$</td>
+                </tr>
+                <tr>
+                    <td class="label">5.0 - Équipements et Frais Connexes:</td>
+                    <td class="value" id="recap-5">13,500.00$</td>
+                </tr>
+                <tr style="border-top: 1px solid #ddd; font-weight: bold;">
+                    <td class="label">TOTAL DES COÛTS DIRECTS:</td>
+                    <td class="value" id="totalBase">207,395.87$</td>
+                </tr>
+                <tr>
+                    <td class="label">Frais généraux (<span id="adminPercent">12</span>%):</td>
+                    <td class="value" id="totalAdmin">24,887.50$</td>
+                </tr>
+                <tr>
+                    <td class="label">Contingences (<span id="contingencyPercent">8</span>%):</td>
+                    <td class="value" id="totalContingency">16,591.67$</td>
+                </tr>
+                <tr>
+                    <td class="label">Profit de l'entrepreneur (<span id="profitPercent">15</span>%):</td>
+                    <td class="value" id="totalProfit">31,109.38$</td>
+                </tr>
+                <tr style="border-top: 1px solid var(--primary-color); font-weight: bold;">
+                    <td class="label">Total avant taxes:</td>
+                    <td class="value" id="totalAvantTaxes">279,984.42$</td>
+                </tr>
+                <tr>
+                    <td class="label">TPS (5%):</td>
+                    <td class="value" id="totalTPS">13,999.22$</td>
+                </tr>
+                <tr>
+                    <td class="label">TVQ (9.975%):</td>
+                    <td class="value" id="totalTVQ">27,928.44$</td>
+                </tr>
+                <tr class="total-row">
+                    <td class="label"><strong>INVESTISSEMENT TOTAL:</strong></td>
+                    <td class="value"><strong id="totalFinal">321,912.08$</strong></td>
+                </tr>
+            </table>
+            <div style="margin-top: 15px; padding: 10px; background: #f9fafb; border-radius: 4px;">
+                <p style="font-size: 10px; color: #555;">
+                    <strong>Métriques clés:</strong><br>
+                    • Coût/pi² (avant taxes): <span id="coutPiCarre">40.23$</span><br>
+                    • Superficie totale: 6,960 pi²<br>
+                    • Durée estimée: 5 semaines<br>
+                    • Répartition: Canexel 88.7% | Brique 11.3%
+                </p>
+            </div>
+        </div>
+
+        <!-- Conditions et Exclusions -->
+        <div class="conditions">
+            <h4>Conditions et Modalités</h4>
+            <ul>
+                <li><strong>Validité:</strong> Cette soumission est valide pour 30 jours à partir de la date d'émission.</li>
+                <li><strong>Délai d'exécution:</strong> 5 semaines après l'obtention des permis et signature du contrat.</li>
+                <li><strong>Modalités de paiement:</strong> 10% à la signature, 25% début des travaux, paiements progressifs selon avancement, 5% retenue finale.</li>
+                <li><strong>Garanties:</strong> 5 ans sur installation Canexel, 10 ans sur maçonnerie, selon normes GCR.</li>
+                <li><strong>Augmentation des matériaux:</strong> Prix sujets à ajustement si augmentation >5% entre soumission et commande.</li>
+                <li><strong>Conditions météo:</strong> Travaux suspendus par temps inclément. Délais ajustés en conséquence.</li>
+                <li><strong>Modifications:</strong> Tout changement après signature fera l'objet d'un ordre de changement écrit avec ajustement de prix.</li>
+            </ul>
+        </div>
+
+        <div class="exclusions">
+            <h4>Exclusions principales</h4>
+            <ul>
+                <li>Travaux de structure ou modifications structurales.</li>
+                <li>Réparations de toiture existante.</li>
+                <li>Travaux d'électricité ou de plomberie.</li>
+                <li>Aménagement paysager autour du bâtiment.</li>
+                <li>Permis de construction (à la charge du client).</li>
+                <li>Décontamination si découverte d'amiante ou autres contaminants.</li>
+                <li>Travaux intérieurs de tout type.</li>
+                <li>Peinture des surfaces autres que les revêtements installés.</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Soumission préparée par :</strong></p>
+            <p style="margin-top: 10px;">
+                <strong><input type="text" class="info-input inline" id="preparePar" 
+                             placeholder="[Nom], [Titre]" style="width: 200px; text-align: center;" 
+                             maxlength="100" onchange="APP.autoSave()"></strong><br>
+                Groupe Perreault
+            </p>
+            <p style="margin-top: 10px;">Pour information: 514.589.5932</p>
+            <p style="margin-top: 12px; font-weight: bold;">Merci de votre confiance!</p>
+            <p style="margin-top: 15px; font-size: 8px; color: #888;">
+                Cette soumission est confidentielle et demeure la propriété de Groupe Perreault.<br>
+                © 2025 Groupe Perreault - Tous droits réservés.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        // Configuration et constantes
+        const CONFIG = {
+            LIMITS: {
+                MIN_AMOUNT: 0,
+                MAX_AMOUNT: 99999999,
+                MIN_RATE: 0,
+                MAX_PROFIT_RATE: 50,
+                MAX_ADMIN_RATE: 20,
+                MAX_CONTINGENCY_RATE: 25,
+                AUTO_SAVE_DELAY: 30000,
+                SAVE_THROTTLE: 1000,
+                MAX_FILE_SIZE: 5000000 // 5MB
+            },
+            TAXES: {
+                TPS: 0.05,
+                TVQ: 0.09975
+            },
+            DEFAULT_RATES: {
+                ADMIN: 0.12,
+                CONTINGENCY: 0.08,
+                PROFIT: 0.15
+            }
+        };
+
+        // Application principale
+        const APP = {
+            // État de l'application
+            state: {
+                rates: {
+                    admin: CONFIG.DEFAULT_RATES.ADMIN,
+                    contingency: CONFIG.DEFAULT_RATES.CONTINGENCY,
+                    profit: CONFIG.DEFAULT_RATES.PROFIT
+                },
+                lastSaveTime: 0,
+                isDirty: false,
+                autoSaveTimer: null,
+                isLoading: false,
+                isCalculating: false
+            },
+
+            // Utilitaires
+            utils: {
+                // Échapper les caractères HTML
+                escapeHtml(text) {
+                    const div = document.createElement('div');
+                    div.textContent = text || '';
+                    return div.innerHTML;
+                },
+
+                // Valider un nombre
+                validateNumber(value, min = CONFIG.LIMITS.MIN_AMOUNT, max = CONFIG.LIMITS.MAX_AMOUNT) {
+                    const num = parseFloat(value) || 0;
+                    return Math.max(min, Math.min(max, num));
+                },
+
+                // Formater la devise
+                formatCurrency(amount) {
+                    // S'assurer que amount est un nombre
+                    const num = parseFloat(amount) || 0;
+                    
+                    // Formater avec 2 décimales
+                    const formatted = num.toFixed(2);
+                    
+                    // Séparer la partie entière et décimale
+                    const parts = formatted.split('.');
+                    
+                    // Ajouter les espaces pour les milliers
+                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                    
+                    // Rejoindre avec le point décimal et ajouter le $
+                    return parts.join('.') + '
+
+                // Parser la devise
+                parseCurrency(text) {
+                    if (!text) return 0;
+                    // Convertir en string si ce n'est pas déjà le cas
+                    let str = text.toString();
+                    
+                    // Enlever le symbole $ et les espaces
+                    str = str.replace(/[$\s]/g, '');
+                    
+                    // Remplacer les virgules (séparateurs de milliers) par rien
+                    str = str.replace(/,/g, '');
+                    
+                    // Parser en nombre
+                    return parseFloat(str) || 0;
+                },
+
+                // Vérifier localStorage
+                isLocalStorageAvailable() {
+                    try {
+                        const test = '__storage_test__';
+                        localStorage.setItem(test, test);
+                        localStorage.removeItem(test);
+                        return true;
+                    } catch(e) {
+                        return false;
+                    }
+                },
+
+                // Afficher le loading
+                showLoading(show = true) {
+                    const overlay = document.getElementById('loadingOverlay');
+                    if (overlay) {
+                        overlay.classList.toggle('show', show);
+                    }
+                    APP.state.isLoading = show;
+                },
+
+                // Afficher notification
+                showNotification(message, isError = false) {
+                    const indicator = document.getElementById('saveIndicator');
+                    const messageEl = document.getElementById('saveMessage');
+                    
+                    if (indicator && messageEl) {
+                        messageEl.textContent = message;
+                        indicator.classList.toggle('error', isError);
+                        indicator.classList.add('show');
+                        
+                        setTimeout(() => {
+                            indicator.classList.remove('show');
+                            indicator.classList.remove('error');
+                        }, 2000);
+                    }
+                }
+            },
+
+            // Initialisation
+            init() {
+                try {
+                    // Vérifier localStorage
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        console.warn('LocalStorage non disponible');
+                        APP.utils.showNotification('⚠️ Stockage local non disponible', true);
+                    }
+
+                    // Définir la date du jour
+                    const today = new Date();
+                    const dateStr = today.toISOString().split('T')[0];
+                    document.getElementById('dateSoumission').value = dateStr;
+                    
+                    // Recalculer toutes les lignes pour initialiser les data-value
+                    document.querySelectorAll('.amount-input').forEach(input => {
+                        APP.calculateRow(input);
+                    });
+                    
+                    // Calculer tout
+                    APP.calculateAll();
+                    
+                    // Configurer l'auto-save
+                    APP.state.autoSaveTimer = setInterval(() => {
+                        if (APP.state.isDirty) {
+                            APP.autoSave();
+                            APP.state.isDirty = false;
+                        }
+                    }, CONFIG.LIMITS.AUTO_SAVE_DELAY);
+
+                    console.log('Application initialisée avec succès');
+                } catch (error) {
+                    console.error('Erreur lors de l\'initialisation:', error);
+                    APP.utils.showNotification('⚠️ Erreur d\'initialisation', true);
+                }
+            },
+
+            // Mettre à jour la quantité
+            updateQuantity(input) {
+                try {
+                    const rowId = input.dataset.row;
+                    const quantity = parseFloat(input.value) || 0;
+                    
+                    // Récupérer le coût unitaire et recalculer
+                    const unitPriceInput = document.querySelector(`.amount-input[data-row="${rowId}"]`);
+                    if (unitPriceInput) {
+                        const rowElement = input.closest('.section-row');
+                        const totalCell = rowElement.querySelector('.amount-display');
+                        
+                        if (totalCell) {
+                            const unitPrice = parseFloat(unitPriceInput.value) || 0;
+                            const total = quantity * unitPrice;
+                            
+                            totalCell.textContent = APP.utils.formatCurrency(total);
+                            totalCell.setAttribute('data-value', total);
+                            
+                            // Recalculer le sous-total de la section
+                            const sectionId = rowId.split('-')[0];
+                            APP.calculateSectionSubtotal(sectionId);
+                            
+                            // Recalculer les totaux
+                            APP.calculateAll();
+                        }
+                    }
+                    
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour de la quantité:', error);
+                }
+            },
+
+            // Calculer une ligne
+            calculateRow(input) {
+                try {
+                    const rowElement = input.closest('.section-row');
+                    if (!rowElement) return;
+                    
+                    const rowId = rowElement.dataset.item;
+                    const quantityInput = rowElement.querySelector('.quantity-input');
+                    const totalCell = rowElement.querySelector('.amount-display');
+                    
+                    if (!totalCell || !quantityInput) return;
+                    
+                    // Extraire la quantité
+                    const quantity = parseFloat(quantityInput.value) || 0;
+                    
+                    // Valider l'entrée
+                    let unitPrice = parseFloat(input.value) || 0;
+                    
+                    // Calculer le total
+                    const total = quantity * unitPrice;
+                    
+                    // Mettre à jour l'affichage
+                    totalCell.textContent = APP.utils.formatCurrency(total);
+                    totalCell.setAttribute('data-value', total); // Stocker la valeur numérique
+                    
+                    // Recalculer le sous-total de la section
+                    const sectionId = rowId.split('-')[0];
+                    APP.calculateSectionSubtotal(sectionId);
+                    
+                    // Recalculer les totaux
+                    APP.calculateAll();
+                    
+                    // Marquer comme modifié
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors du calcul de la ligne:', error);
+                }
+            },
+
+            // Calculer le sous-total d'une section
+            calculateSectionSubtotal(sectionId) {
+                try {
+                    let subtotal = 0;
+                    const section = document.querySelector(`[data-section="${sectionId}"]`);
+                    
+                    if (!section) return 0;
+                    
+                    const rows = section.querySelectorAll('.section-row:not(.hidden)');
+                    
+                    rows.forEach(row => {
+                        const totalCell = row.querySelector('.amount-display[data-total]');
+                        if (totalCell) {
+                            // Utiliser data-value si disponible, sinon parser le texte
+                            const value = totalCell.getAttribute('data-value') ? 
+                                        parseFloat(totalCell.getAttribute('data-value')) : 
+                                        APP.utils.parseCurrency(totalCell.textContent);
+                            subtotal += value;
+                        }
+                    });
+                    
+                    // Mettre à jour le sous-total
+                    const subtotalCell = section.querySelector(`[data-subtotal="${sectionId}"]`);
+                    if (subtotalCell) {
+                        subtotalCell.textContent = APP.utils.formatCurrency(subtotal);
+                        subtotalCell.setAttribute('data-value', subtotal);
+                    }
+                    
+                    // Mettre à jour le récapitulatif
+                    const recapCell = document.getElementById(`recap-${sectionId}`);
+                    if (recapCell) {
+                        recapCell.textContent = APP.utils.formatCurrency(subtotal);
+                    }
+                    
+                    return subtotal;
+                } catch (error) {
+                    console.error('Erreur lors du calcul du sous-total:', error);
+                    return 0;
+                }
+            },
+
+            // Basculer l'affichage d'une ligne
+            toggleRow(checkbox) {
+                try {
+                    const row = checkbox.closest('.section-row');
+                    if (!row) return;
+                    
+                    row.classList.toggle('hidden', !checkbox.checked);
+                    
+                    const sectionId = row.dataset.item.split('-')[0];
+                    APP.calculateSectionSubtotal(sectionId);
+                    APP.calculateAll();
+                    
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors du toggle de la ligne:', error);
+                }
+            },
+
+            // Calculer tous les totaux
+            calculateAll() {
+                try {
+                    // D'abord recalculer toutes les lignes pour s'assurer que les data-value sont à jour
+                    document.querySelectorAll('.amount-input').forEach(input => {
+                        const rowElement = input.closest('.section-row');
+                        if (rowElement) {
+                            const quantityInput = rowElement.querySelector('.quantity-input');
+                            const totalCell = rowElement.querySelector('.amount-display');
+                            
+                            if (totalCell && quantityInput) {
+                                const quantity = parseFloat(quantityInput.value) || 0;
+                                const unitPrice = parseFloat(input.value) || 0;
+                                const total = quantity * unitPrice;
+                                
+                                totalCell.textContent = APP.utils.formatCurrency(total);
+                                totalCell.setAttribute('data-value', total);
+                            }
+                        }
+                    });
+                    
+                    let totalBase = 0;
+                    
+                    // Calculer le total des sections 1 à 5
+                    for (let i = 1; i <= 5; i++) {
+                        const subtotal = APP.calculateSectionSubtotal(i.toString());
+                        totalBase += subtotal;
+                    }
+                    
+                    // Éviter la division par zéro
+                    totalBase = Math.max(0, totalBase);
+                    
+                    // Calculer les frais
+                    const admin = totalBase * APP.state.rates.admin;
+                    const contingency = totalBase * APP.state.rates.contingency;
+                    const profit = totalBase * APP.state.rates.profit;
+                    
+                    const totalAvantTaxes = totalBase + admin + contingency + profit;
+                    const tps = totalAvantTaxes * CONFIG.TAXES.TPS;
+                    const tvq = totalAvantTaxes * CONFIG.TAXES.TVQ;
+                    const totalFinal = totalAvantTaxes + tps + tvq;
+                    
+                    // Calculer le coût par pied carré
+                    const superficie = parseFloat(document.getElementById('superficie').value.replace(/[^\d]/g, '')) || 6960;
+                    const coutPiCarre = totalAvantTaxes / superficie;
+                    
+                    // Mettre à jour l'affichage
+                    APP.updateDisplay('totalBase', totalBase);
+                    APP.updateDisplay('totalAdmin', admin);
+                    APP.updateDisplay('totalContingency', contingency);
+                    APP.updateDisplay('totalProfit', profit);
+                    APP.updateDisplay('totalAvantTaxes', totalAvantTaxes);
+                    APP.updateDisplay('totalTPS', tps);
+                    APP.updateDisplay('totalTVQ', tvq);
+                    APP.updateDisplay('totalFinal', totalFinal);
+                    
+                    // Mettre à jour le coût par pied carré
+                    const coutPiCarreEl = document.getElementById('coutPiCarre');
+                    if (coutPiCarreEl) {
+                        coutPiCarreEl.textContent = APP.utils.formatCurrency(coutPiCarre);
+                    }
+                } catch (error) {
+                    console.error('Erreur lors du calcul total:', error);
+                }
+            },
+
+            // Mettre à jour l'affichage
+            updateDisplay(id, value) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = APP.utils.formatCurrency(value);
+                }
+            },
+
+            // Basculer toutes les sections
+            toggleAllSections() {
+                try {
+                    const checkboxes = document.querySelectorAll('.hide-checkbox');
+                    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                    
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = !allChecked;
+                        APP.toggleRow(checkbox);
+                    });
+                } catch (error) {
+                    console.error('Erreur lors du toggle des sections:', error);
+                }
+            },
+
+            // Mettre à jour le taux de profit
+            updateProfitRate() {
+                try {
+                    let rate = parseFloat(document.getElementById('profitRate').value);
+                    rate = APP.utils.validateNumber(rate, CONFIG.LIMITS.MIN_RATE, CONFIG.LIMITS.MAX_PROFIT_RATE);
+                    
+                    document.getElementById('profitRate').value = rate;
+                    APP.state.rates.profit = rate / 100;
+                    document.getElementById('profitPercent').textContent = rate.toFixed(1);
+                    
+                    APP.calculateAll();
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour du taux de profit:', error);
+                }
+            },
+
+            // Mettre à jour le taux d'administration
+            updateAdminRate() {
+                try {
+                    let rate = parseFloat(document.getElementById('adminRate').value);
+                    rate = APP.utils.validateNumber(rate, CONFIG.LIMITS.MIN_RATE, CONFIG.LIMITS.MAX_ADMIN_RATE);
+                    
+                    document.getElementById('adminRate').value = rate;
+                    APP.state.rates.admin = rate / 100;
+                    document.getElementById('adminPercent').textContent = rate.toFixed(1);
+                    
+                    APP.calculateAll();
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour du taux admin:', error);
+                }
+            },
+
+            // Mettre à jour le taux de contingences
+            updateContingencyRate() {
+                try {
+                    let rate = parseFloat(document.getElementById('contingencyRate').value);
+                    rate = APP.utils.validateNumber(rate, CONFIG.LIMITS.MIN_RATE, CONFIG.LIMITS.MAX_CONTINGENCY_RATE);
+                    
+                    document.getElementById('contingencyRate').value = rate;
+                    APP.state.rates.contingency = rate / 100;
+                    document.getElementById('contingencyPercent').textContent = rate.toFixed(1);
+                    
+                    APP.calculateAll();
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour du taux de contingences:', error);
+                }
+            },
+
+            // Sauvegarder automatiquement
+            autoSave() {
+                try {
+                    const now = Date.now();
+                    
+                    // Throttling
+                    if (now - APP.state.lastSaveTime < CONFIG.LIMITS.SAVE_THROTTLE) {
+                        return;
+                    }
+                    
+                    APP.state.lastSaveTime = now;
+                    
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        console.warn('LocalStorage non disponible pour la sauvegarde');
+                        return;
+                    }
+                    
+                    const data = APP.collectData();
+                    localStorage.setItem('soumission_revetements_data', JSON.stringify(data));
+                    APP.utils.showNotification('✔ Sauvegarde automatique');
+                } catch (error) {
+                    console.error('Erreur lors de la sauvegarde automatique:', error);
+                }
+            },
+
+            // Collecter les données
+            collectData() {
+                const data = {
+                    version: '2.0',
+                    inputs: {},
+                    quantities: {},
+                    checkboxes: {},
+                    rates: { ...APP.state.rates },
+                    headerInfo: {},
+                    projectInfo: {},
+                    timestamp: new Date().toISOString()
+                };
+                
+                try {
+                    // Collecter les informations d'en-tête
+                    const headerFields = ['numeroSoumission', 'dateSoumission'];
+                    headerFields.forEach(field => {
+                        const el = document.getElementById(field);
+                        if (el) data.headerInfo[field] = el.value;
+                    });
+                    
+                    // Collecter les informations du projet
+                    const projectFields = [
+                        'nomClient', 'adresseClient', 'villeClient', 'codePostalClient',
+                        'nomProjet', 'typeConstruction', 'superficie', 'etages',
+                        'typeFondation', 'nomContact', 'chargeProjet', 'preparePar'
+                    ];
+                    
+                    projectFields.forEach(field => {
+                        const el = document.getElementById(field);
+                        if (el) data.projectInfo[field] = el.value;
+                    });
+                    
+                    // Collecter les valeurs des inputs
+                    document.querySelectorAll('.amount-input').forEach(input => {
+                        data.inputs[input.dataset.row] = input.value;
+                    });
+                    
+                    // Collecter les quantités
+                    document.querySelectorAll('.quantity-input').forEach(input => {
+                        data.quantities[input.dataset.row] = input.value;
+                    });
+                    
+                    // Collecter l'état des checkboxes
+                    document.querySelectorAll('.hide-checkbox').forEach((checkbox, index) => {
+                        data.checkboxes[index] = checkbox.checked;
+                    });
+                } catch (error) {
+                    console.error('Erreur lors de la collecte des données:', error);
+                }
+                
+                return data;
+            },
+
+            // Sauvegarder manuellement
+            saveData() {
+                try {
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        APP.utils.showNotification('⚠️ Stockage local non disponible', true);
+                        return;
+                    }
+                    
+                    APP.autoSave();
+                    APP.utils.showNotification('✔ Données sauvegardées avec succès');
+                } catch (error) {
+                    console.error('Erreur lors de la sauvegarde:', error);
+                    APP.utils.showNotification('⚠️ Erreur lors de la sauvegarde', true);
+                }
+            },
+
+            // Charger les données
+            loadData() {
+                try {
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        return;
+                    }
+                    
+                    const savedData = localStorage.getItem('soumission_revetements_data');
+                    
+                    if (!savedData) {
+                        return;
+                    }
+                    
+                    APP.utils.showLoading(true);
+                    const data = JSON.parse(savedData);
+                    
+                    // Restaurer les données
+                    APP.restoreData(data);
+                    
+                    APP.utils.showLoading(false);
+                    APP.utils.showNotification('✔ Données chargées avec succès');
+                } catch (error) {
+                    console.error('Erreur lors du chargement:', error);
+                    APP.utils.showNotification('⚠️ Erreur lors du chargement', true);
+                    APP.utils.showLoading(false);
+                }
+            },
+
+            // Restaurer les données
+            restoreData(data) {
+                try {
+                    // Restaurer les taux
+                    if (data.rates) {
+                        APP.state.rates.admin = data.rates.admin || CONFIG.DEFAULT_RATES.ADMIN;
+                        APP.state.rates.contingency = data.rates.contingency || CONFIG.DEFAULT_RATES.CONTINGENCY;
+                        APP.state.rates.profit = data.rates.profit || CONFIG.DEFAULT_RATES.PROFIT;
+                        
+                        document.getElementById('adminRate').value = APP.state.rates.admin * 100;
+                        document.getElementById('contingencyRate').value = APP.state.rates.contingency * 100;
+                        document.getElementById('profitRate').value = APP.state.rates.profit * 100;
+                    }
+                    
+                    // Restaurer les informations d'en-tête
+                    if (data.headerInfo) {
+                        Object.keys(data.headerInfo).forEach(field => {
+                            const el = document.getElementById(field);
+                            if (el && data.headerInfo[field]) {
+                                el.value = data.headerInfo[field];
+                            }
+                        });
+                    }
+                    
+                    // Restaurer les informations du projet
+                    if (data.projectInfo) {
+                        Object.keys(data.projectInfo).forEach(field => {
+                            const el = document.getElementById(field);
+                            if (el && data.projectInfo[field]) {
+                                el.value = data.projectInfo[field];
+                            }
+                        });
+                    }
+                    
+                    // Restaurer les quantités
+                    if (data.quantities) {
+                        Object.keys(data.quantities).forEach(key => {
+                            const input = document.querySelector(`.quantity-input[data-row="${key}"]`);
+                            if (input) {
+                                input.value = data.quantities[key];
+                            }
+                        });
+                    }
+                    
+                    // Restaurer les valeurs des inputs
+                    if (data.inputs) {
+                        Object.keys(data.inputs).forEach(key => {
+                            const input = document.querySelector(`.amount-input[data-row="${key}"]`);
+                            if (input) {
+                                input.value = data.inputs[key];
+                                APP.calculateRow(input);
+                            }
+                        });
+                    }
+                    
+                    // Restaurer l'état des checkboxes
+                    if (data.checkboxes) {
+                        const checkboxes = document.querySelectorAll('.hide-checkbox');
+                        Object.keys(data.checkboxes).forEach(index => {
+                            if (checkboxes[index]) {
+                                checkboxes[index].checked = data.checkboxes[index];
+                                APP.toggleRow(checkboxes[index]);
+                            }
+                        });
+                    }
+                    
+                    APP.calculateAll();
+                } catch (error) {
+                    console.error('Erreur lors de la restauration des données:', error);
+                    throw error;
+                }
+            },
+
+            // Réinitialiser tout
+            resetAll() {
+                if (!confirm('Êtes-vous sûr de vouloir réinitialiser tous les montants?\n\nCette action est irréversible!')) {
+                    return;
+                }
+                
+                try {
+                    APP.utils.showLoading(true);
+                    
+                    // Réinitialiser tous les inputs de montants à leurs valeurs par défaut
+                    const defaultValues = {
+                        '1-1': 7.50, '1-2': 7.50, '1-3': 6946, '1-4': 8.50, '1-5': 9.50, '1-6': 2563,
+                        '2-1': 0.35, '2-2': 0.50, '2-3': 1.85, '2-4': 4040,
+                        '3-1': 11.07, '3-2': 14.55, '3-3': 704, '3-4': 14.00, '3-5': 28.00, '3-6': 8760,
+                        '4-1': 64.65, '4-2': 73.33, '4-3': 38.89, '4-4': 55.00,
+                        '5-1': 60.00, '5-2': 450.00, '5-3': 2600, '5-4': 350.00, '5-5': 2700
+                    };
+                    
+                    const defaultQuantities = {
+                        '1-1': 4425, '1-2': 1749, '1-3': 1, '1-4': 463, '1-5': 323, '1-6': 1,
+                        '2-1': 7500, '2-2': 850, '2-3': 7200, '2-4': 1,
+                        '3-1': 600, '3-2': 88, '3-3': 1, '3-4': 800, '3-5': 650, '3-6': 1,
+                        '4-1': 465, '4-2': 294, '4-3': 180, '4-4': 96,
+                        '5-1': 30, '5-2': 8, '5-3': 1, '5-4': 8, '5-5': 1
+                    };
+                    
+                    // Restaurer les quantités par défaut
+                    Object.keys(defaultQuantities).forEach(key => {
+                        const input = document.querySelector(`.quantity-input[data-row="${key}"]`);
+                        if (input) {
+                            input.value = defaultQuantities[key];
+                        }
+                    });
+                    
+                    // Restaurer les prix par défaut
+                    Object.keys(defaultValues).forEach(key => {
+                        const input = document.querySelector(`.amount-input[data-row="${key}"]`);
+                        if (input) {
+                            input.value = defaultValues[key];
+                            APP.calculateRow(input);
+                        }
+                    });
+                    
+                    // Réinitialiser toutes les checkboxes
+                    document.querySelectorAll('.hide-checkbox').forEach(checkbox => {
+                        checkbox.checked = true;
+                        APP.toggleRow(checkbox);
+                    });
+                    
+                    // Réinitialiser les taux
+                    APP.state.rates.admin = CONFIG.DEFAULT_RATES.ADMIN;
+                    APP.state.rates.contingency = CONFIG.DEFAULT_RATES.CONTINGENCY;
+                    APP.state.rates.profit = CONFIG.DEFAULT_RATES.PROFIT;
+                    
+                    document.getElementById('adminRate').value = APP.state.rates.admin * 100;
+                    document.getElementById('contingencyRate').value = APP.state.rates.contingency * 100;
+                    document.getElementById('profitRate').value = APP.state.rates.profit * 100;
+                    
+                    // Recalculer tout
+                    APP.calculateAll();
+                    
+                    // Supprimer du localStorage
+                    if (APP.utils.isLocalStorageAvailable()) {
+                        localStorage.removeItem('soumission_revetements_data');
+                    }
+                    
+                    APP.utils.showLoading(false);
+                    APP.utils.showNotification('✔ Réinitialisation complète');
+                } catch (error) {
+                    console.error('Erreur lors de la réinitialisation:', error);
+                    APP.utils.showNotification('⚠️ Erreur lors de la réinitialisation', true);
+                    APP.utils.showLoading(false);
+                }
+            },
+
+            // Utilitaires
+            utils: {
+
+                // Parser la devise
+                parseCurrency(text) {
+                    if (!text) return 0;
+                    // Enlever tout sauf les chiffres, le point et la virgule
+                    // Remplacer les espaces de milliers et la virgule décimale française
+                    const cleaned = text.toString()
+                        .replace(/[^\d,.-]/g, '') // Garder seulement chiffres, virgule, point, tiret
+                        .replace(/\s/g, '') // Enlever les espaces
+                        .replace(',', '.'); // Remplacer virgule par point pour les décimales
+                    return parseFloat(cleaned) || 0;
+                },
+
+                // Vérifier localStorage
+                isLocalStorageAvailable() {
+                    try {
+                        const test = '__storage_test__';
+                        localStorage.setItem(test, test);
+                        localStorage.removeItem(test);
+                        return true;
+                    } catch(e) {
+                        return false;
+                    }
+                },
+
+                // Afficher le loading
+                showLoading(show = true) {
+                    const overlay = document.getElementById('loadingOverlay');
+                    if (overlay) {
+                        overlay.classList.toggle('show', show);
+                    }
+                    APP.state.isLoading = show;
+                },
+
+                // Afficher notification
+                showNotification(message, isError = false) {
+                    const indicator = document.getElementById('saveIndicator');
+                    const messageEl = document.getElementById('saveMessage');
+                    
+                    if (indicator && messageEl) {
+                        messageEl.textContent = message;
+                        indicator.classList.toggle('error', isError);
+                        indicator.classList.add('show');
+                        
+                        setTimeout(() => {
+                            indicator.classList.remove('show');
+                            indicator.classList.remove('error');
+                        }, 2000);
+                    }
+                }
+            },
+
+            // Initialisation
+            init() {
+                try {
+                    // Vérifier localStorage
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        console.warn('LocalStorage non disponible');
+                        APP.utils.showNotification('⚠️ Stockage local non disponible', true);
+                    }
+
+                    // Définir la date du jour
+                    const today = new Date();
+                    const dateStr = today.toISOString().split('T')[0];
+                    document.getElementById('dateSoumission').value = dateStr;
+                    
+                    // Recalculer toutes les lignes pour initialiser les data-value
+                    document.querySelectorAll('.amount-input').forEach(input => {
+                        APP.calculateRow(input);
+                    });
+                    
+                    // Calculer tout
+                    APP.calculateAll();
+                    
+                    // Configurer l'auto-save
+                    APP.state.autoSaveTimer = setInterval(() => {
+                        if (APP.state.isDirty) {
+                            APP.autoSave();
+                            APP.state.isDirty = false;
+                        }
+                    }, CONFIG.LIMITS.AUTO_SAVE_DELAY);
+
+                    console.log('Application initialisée avec succès');
+                } catch (error) {
+                    console.error('Erreur lors de l\'initialisation:', error);
+                    APP.utils.showNotification('⚠️ Erreur d\'initialisation', true);
+                }
+            },
+
+            // Mettre à jour la quantité
+            updateQuantity(input) {
+                try {
+                    const rowId = input.dataset.row;
+                    const quantity = parseFloat(input.value) || 0;
+                    
+                    // Récupérer le coût unitaire et recalculer
+                    const unitPriceInput = document.querySelector(`.amount-input[data-row="${rowId}"]`);
+                    if (unitPriceInput) {
+                        const rowElement = input.closest('.section-row');
+                        const totalCell = rowElement.querySelector('.amount-display');
+                        
+                        if (totalCell) {
+                            const unitPrice = parseFloat(unitPriceInput.value) || 0;
+                            const total = quantity * unitPrice;
+                            
+                            totalCell.textContent = APP.utils.formatCurrency(total);
+                            totalCell.setAttribute('data-value', total);
+                            
+                            // Recalculer le sous-total de la section
+                            const sectionId = rowId.split('-')[0];
+                            APP.calculateSectionSubtotal(sectionId);
+                            
+                            // Recalculer les totaux
+                            APP.calculateAll();
+                        }
+                    }
+                    
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour de la quantité:', error);
+                }
+            },
+
+            // Calculer une ligne
+            calculateRow(input) {
+                try {
+                    const rowElement = input.closest('.section-row');
+                    if (!rowElement) return;
+                    
+                    const rowId = rowElement.dataset.item;
+                    const quantityInput = rowElement.querySelector('.quantity-input');
+                    const totalCell = rowElement.querySelector('.amount-display');
+                    
+                    if (!totalCell || !quantityInput) return;
+                    
+                    // Extraire la quantité
+                    const quantity = parseFloat(quantityInput.value) || 0;
+                    
+                    // Valider l'entrée
+                    let unitPrice = parseFloat(input.value) || 0;
+                    
+                    // Calculer le total
+                    const total = quantity * unitPrice;
+                    
+                    // Mettre à jour l'affichage
+                    totalCell.textContent = APP.utils.formatCurrency(total);
+                    totalCell.setAttribute('data-value', total); // Stocker la valeur numérique
+                    
+                    // Recalculer le sous-total de la section
+                    const sectionId = rowId.split('-')[0];
+                    APP.calculateSectionSubtotal(sectionId);
+                    
+                    // Recalculer les totaux
+                    APP.calculateAll();
+                    
+                    // Marquer comme modifié
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors du calcul de la ligne:', error);
+                }
+            },
+
+            // Calculer le sous-total d'une section
+            calculateSectionSubtotal(sectionId) {
+                try {
+                    let subtotal = 0;
+                    const section = document.querySelector(`[data-section="${sectionId}"]`);
+                    
+                    if (!section) return 0;
+                    
+                    const rows = section.querySelectorAll('.section-row:not(.hidden)');
+                    
+                    rows.forEach(row => {
+                        const totalCell = row.querySelector('.amount-display[data-total]');
+                        if (totalCell) {
+                            // Utiliser data-value si disponible, sinon parser le texte
+                            const value = totalCell.getAttribute('data-value') ? 
+                                        parseFloat(totalCell.getAttribute('data-value')) : 
+                                        APP.utils.parseCurrency(totalCell.textContent);
+                            subtotal += value;
+                        }
+                    });
+                    
+                    // Mettre à jour le sous-total
+                    const subtotalCell = section.querySelector(`[data-subtotal="${sectionId}"]`);
+                    if (subtotalCell) {
+                        subtotalCell.textContent = APP.utils.formatCurrency(subtotal);
+                        subtotalCell.setAttribute('data-value', subtotal);
+                    }
+                    
+                    // Mettre à jour le récapitulatif
+                    const recapCell = document.getElementById(`recap-${sectionId}`);
+                    if (recapCell) {
+                        recapCell.textContent = APP.utils.formatCurrency(subtotal);
+                    }
+                    
+                    return subtotal;
+                } catch (error) {
+                    console.error('Erreur lors du calcul du sous-total:', error);
+                    return 0;
+                }
+            },
+
+            // Basculer l'affichage d'une ligne
+            toggleRow(checkbox) {
+                try {
+                    const row = checkbox.closest('.section-row');
+                    if (!row) return;
+                    
+                    row.classList.toggle('hidden', !checkbox.checked);
+                    
+                    const sectionId = row.dataset.item.split('-')[0];
+                    APP.calculateSectionSubtotal(sectionId);
+                    APP.calculateAll();
+                    
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors du toggle de la ligne:', error);
+                }
+            },
+
+            // Calculer tous les totaux
+            calculateAll() {
+                try {
+                    // D'abord recalculer toutes les lignes pour s'assurer que les data-value sont à jour
+                    document.querySelectorAll('.amount-input').forEach(input => {
+                        const rowElement = input.closest('.section-row');
+                        if (rowElement) {
+                            const quantityInput = rowElement.querySelector('.quantity-input');
+                            const totalCell = rowElement.querySelector('.amount-display');
+                            
+                            if (totalCell && quantityInput) {
+                                const quantity = parseFloat(quantityInput.value) || 0;
+                                const unitPrice = parseFloat(input.value) || 0;
+                                const total = quantity * unitPrice;
+                                
+                                totalCell.textContent = APP.utils.formatCurrency(total);
+                                totalCell.setAttribute('data-value', total);
+                            }
+                        }
+                    });
+                    
+                    let totalBase = 0;
+                    
+                    // Calculer le total des sections 1 à 5
+                    for (let i = 1; i <= 5; i++) {
+                        const subtotal = APP.calculateSectionSubtotal(i.toString());
+                        totalBase += subtotal;
+                    }
+                    
+                    // Éviter la division par zéro
+                    totalBase = Math.max(0, totalBase);
+                    
+                    // Calculer les frais
+                    const admin = totalBase * APP.state.rates.admin;
+                    const contingency = totalBase * APP.state.rates.contingency;
+                    const profit = totalBase * APP.state.rates.profit;
+                    
+                    const totalAvantTaxes = totalBase + admin + contingency + profit;
+                    const tps = totalAvantTaxes * CONFIG.TAXES.TPS;
+                    const tvq = totalAvantTaxes * CONFIG.TAXES.TVQ;
+                    const totalFinal = totalAvantTaxes + tps + tvq;
+                    
+                    // Calculer le coût par pied carré
+                    const superficie = parseFloat(document.getElementById('superficie').value.replace(/[^\d]/g, '')) || 6960;
+                    const coutPiCarre = totalAvantTaxes / superficie;
+                    
+                    // Mettre à jour l'affichage
+                    APP.updateDisplay('totalBase', totalBase);
+                    APP.updateDisplay('totalAdmin', admin);
+                    APP.updateDisplay('totalContingency', contingency);
+                    APP.updateDisplay('totalProfit', profit);
+                    APP.updateDisplay('totalAvantTaxes', totalAvantTaxes);
+                    APP.updateDisplay('totalTPS', tps);
+                    APP.updateDisplay('totalTVQ', tvq);
+                    APP.updateDisplay('totalFinal', totalFinal);
+                    
+                    // Mettre à jour le coût par pied carré
+                    const coutPiCarreEl = document.getElementById('coutPiCarre');
+                    if (coutPiCarreEl) {
+                        coutPiCarreEl.textContent = APP.utils.formatCurrency(coutPiCarre);
+                    }
+                } catch (error) {
+                    console.error('Erreur lors du calcul total:', error);
+                }
+            },
+
+            // Mettre à jour l'affichage
+            updateDisplay(id, value) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = APP.utils.formatCurrency(value);
+                }
+            },
+
+            // Basculer toutes les sections
+            toggleAllSections() {
+                try {
+                    const checkboxes = document.querySelectorAll('.hide-checkbox');
+                    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                    
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = !allChecked;
+                        APP.toggleRow(checkbox);
+                    });
+                } catch (error) {
+                    console.error('Erreur lors du toggle des sections:', error);
+                }
+            },
+
+            // Mettre à jour le taux de profit
+            updateProfitRate() {
+                try {
+                    let rate = parseFloat(document.getElementById('profitRate').value);
+                    rate = APP.utils.validateNumber(rate, CONFIG.LIMITS.MIN_RATE, CONFIG.LIMITS.MAX_PROFIT_RATE);
+                    
+                    document.getElementById('profitRate').value = rate;
+                    APP.state.rates.profit = rate / 100;
+                    document.getElementById('profitPercent').textContent = rate.toFixed(1);
+                    
+                    APP.calculateAll();
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour du taux de profit:', error);
+                }
+            },
+
+            // Mettre à jour le taux d'administration
+            updateAdminRate() {
+                try {
+                    let rate = parseFloat(document.getElementById('adminRate').value);
+                    rate = APP.utils.validateNumber(rate, CONFIG.LIMITS.MIN_RATE, CONFIG.LIMITS.MAX_ADMIN_RATE);
+                    
+                    document.getElementById('adminRate').value = rate;
+                    APP.state.rates.admin = rate / 100;
+                    document.getElementById('adminPercent').textContent = rate.toFixed(1);
+                    
+                    APP.calculateAll();
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour du taux admin:', error);
+                }
+            },
+
+            // Mettre à jour le taux de contingences
+            updateContingencyRate() {
+                try {
+                    let rate = parseFloat(document.getElementById('contingencyRate').value);
+                    rate = APP.utils.validateNumber(rate, CONFIG.LIMITS.MIN_RATE, CONFIG.LIMITS.MAX_CONTINGENCY_RATE);
+                    
+                    document.getElementById('contingencyRate').value = rate;
+                    APP.state.rates.contingency = rate / 100;
+                    document.getElementById('contingencyPercent').textContent = rate.toFixed(1);
+                    
+                    APP.calculateAll();
+                    APP.state.isDirty = true;
+                } catch (error) {
+                    console.error('Erreur lors de la mise à jour du taux de contingences:', error);
+                }
+            },
+
+            // Sauvegarder automatiquement
+            autoSave() {
+                try {
+                    const now = Date.now();
+                    
+                    // Throttling
+                    if (now - APP.state.lastSaveTime < CONFIG.LIMITS.SAVE_THROTTLE) {
+                        return;
+                    }
+                    
+                    APP.state.lastSaveTime = now;
+                    
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        console.warn('LocalStorage non disponible pour la sauvegarde');
+                        return;
+                    }
+                    
+                    const data = APP.collectData();
+                    localStorage.setItem('soumission_revetements_data', JSON.stringify(data));
+                    APP.utils.showNotification('✔ Sauvegarde automatique');
+                } catch (error) {
+                    console.error('Erreur lors de la sauvegarde automatique:', error);
+                }
+            },
+
+            // Collecter les données
+            collectData() {
+                const data = {
+                    version: '2.0',
+                    inputs: {},
+                    quantities: {},
+                    checkboxes: {},
+                    rates: { ...APP.state.rates },
+                    headerInfo: {},
+                    projectInfo: {},
+                    timestamp: new Date().toISOString()
+                };
+                
+                try {
+                    // Collecter les informations d'en-tête
+                    const headerFields = ['numeroSoumission', 'dateSoumission'];
+                    headerFields.forEach(field => {
+                        const el = document.getElementById(field);
+                        if (el) data.headerInfo[field] = el.value;
+                    });
+                    
+                    // Collecter les informations du projet
+                    const projectFields = [
+                        'nomClient', 'adresseClient', 'villeClient', 'codePostalClient',
+                        'nomProjet', 'typeConstruction', 'superficie', 'etages',
+                        'typeFondation', 'nomContact', 'chargeProjet', 'preparePar'
+                    ];
+                    
+                    projectFields.forEach(field => {
+                        const el = document.getElementById(field);
+                        if (el) data.projectInfo[field] = el.value;
+                    });
+                    
+                    // Collecter les valeurs des inputs
+                    document.querySelectorAll('.amount-input').forEach(input => {
+                        data.inputs[input.dataset.row] = input.value;
+                    });
+                    
+                    // Collecter les quantités
+                    document.querySelectorAll('.quantity-input').forEach(input => {
+                        data.quantities[input.dataset.row] = input.value;
+                    });
+                    
+                    // Collecter l'état des checkboxes
+                    document.querySelectorAll('.hide-checkbox').forEach((checkbox, index) => {
+                        data.checkboxes[index] = checkbox.checked;
+                    });
+                } catch (error) {
+                    console.error('Erreur lors de la collecte des données:', error);
+                }
+                
+                return data;
+            },
+
+            // Sauvegarder manuellement
+            saveData() {
+                try {
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        APP.utils.showNotification('⚠️ Stockage local non disponible', true);
+                        return;
+                    }
+                    
+                    APP.autoSave();
+                    APP.utils.showNotification('✔ Données sauvegardées avec succès');
+                } catch (error) {
+                    console.error('Erreur lors de la sauvegarde:', error);
+                    APP.utils.showNotification('⚠️ Erreur lors de la sauvegarde', true);
+                }
+            },
+
+            // Charger les données
+            loadData() {
+                try {
+                    if (!APP.utils.isLocalStorageAvailable()) {
+                        return;
+                    }
+                    
+                    const savedData = localStorage.getItem('soumission_revetements_data');
+                    
+                    if (!savedData) {
+                        return;
+                    }
+                    
+                    APP.utils.showLoading(true);
+                    const data = JSON.parse(savedData);
+                    
+                    // Restaurer les données
+                    APP.restoreData(data);
+                    
+                    APP.utils.showLoading(false);
+                    APP.utils.showNotification('✔ Données chargées avec succès');
+                } catch (error) {
+                    console.error('Erreur lors du chargement:', error);
+                    APP.utils.showNotification('⚠️ Erreur lors du chargement', true);
+                    APP.utils.showLoading(false);
+                }
+            },
+
+            // Restaurer les données
+            restoreData(data) {
+                try {
+                    // Restaurer les taux
+                    if (data.rates) {
+                        APP.state.rates.admin = data.rates.admin || CONFIG.DEFAULT_RATES.ADMIN;
+                        APP.state.rates.contingency = data.rates.contingency || CONFIG.DEFAULT_RATES.CONTINGENCY;
+                        APP.state.rates.profit = data.rates.profit || CONFIG.DEFAULT_RATES.PROFIT;
+                        
+                        document.getElementById('adminRate').value = APP.state.rates.admin * 100;
+                        document.getElementById('contingencyRate').value = APP.state.rates.contingency * 100;
+                        document.getElementById('profitRate').value = APP.state.rates.profit * 100;
+                    }
+                    
+                    // Restaurer les informations d'en-tête
+                    if (data.headerInfo) {
+                        Object.keys(data.headerInfo).forEach(field => {
+                            const el = document.getElementById(field);
+                            if (el && data.headerInfo[field]) {
+                                el.value = data.headerInfo[field];
+                            }
+                        });
+                    }
+                    
+                    // Restaurer les informations du projet
+                    if (data.projectInfo) {
+                        Object.keys(data.projectInfo).forEach(field => {
+                            const el = document.getElementById(field);
+                            if (el && data.projectInfo[field]) {
+                                el.value = data.projectInfo[field];
+                            }
+                        });
+                    }
+                    
+                    // Restaurer les quantités
+                    if (data.quantities) {
+                        Object.keys(data.quantities).forEach(key => {
+                            const input = document.querySelector(`.quantity-input[data-row="${key}"]`);
+                            if (input) {
+                                input.value = data.quantities[key];
+                            }
+                        });
+                    }
+                    
+                    // Restaurer les valeurs des inputs
+                    if (data.inputs) {
+                        Object.keys(data.inputs).forEach(key => {
+                            const input = document.querySelector(`.amount-input[data-row="${key}"]`);
+                            if (input) {
+                                input.value = data.inputs[key];
+                                APP.calculateRow(input);
+                            }
+                        });
+                    }
+                    
+                    // Restaurer l'état des checkboxes
+                    if (data.checkboxes) {
+                        const checkboxes = document.querySelectorAll('.hide-checkbox');
+                        Object.keys(data.checkboxes).forEach(index => {
+                            if (checkboxes[index]) {
+                                checkboxes[index].checked = data.checkboxes[index];
+                                APP.toggleRow(checkboxes[index]);
+                            }
+                        });
+                    }
+                    
+                    APP.calculateAll();
+                } catch (error) {
+                    console.error('Erreur lors de la restauration des données:', error);
+                    throw error;
+                }
+            },
+
+            // Réinitialiser tout
+            resetAll() {
+                if (!confirm('Êtes-vous sûr de vouloir réinitialiser tous les montants?\n\nCette action est irréversible!')) {
+                    return;
+                }
+                
+                try {
+                    APP.utils.showLoading(true);
+                    
+                    // Réinitialiser tous les inputs de montants à leurs valeurs par défaut
+                    const defaultValues = {
+                        '1-1': 7.50, '1-2': 7.50, '1-3': 6946, '1-4': 8.50, '1-5': 9.50, '1-6': 2563,
+                        '2-1': 0.35, '2-2': 0.50, '2-3': 1.85, '2-4': 4040,
+                        '3-1': 11.07, '3-2': 14.55, '3-3': 704, '3-4': 14.00, '3-5': 28.00, '3-6': 8760,
+                        '4-1': 64.65, '4-2': 73.33, '4-3': 38.89, '4-4': 55.00,
+                        '5-1': 60.00, '5-2': 450.00, '5-3': 2600, '5-4': 350.00, '5-5': 2700
+                    };
+                    
+                    const defaultQuantities = {
+                        '1-1': 4425, '1-2': 1749, '1-3': 1, '1-4': 463, '1-5': 323, '1-6': 1,
+                        '2-1': 7500, '2-2': 850, '2-3': 7200, '2-4': 1,
+                        '3-1': 600, '3-2': 88, '3-3': 1, '3-4': 800, '3-5': 650, '3-6': 1,
+                        '4-1': 465, '4-2': 294, '4-3': 180, '4-4': 96,
+                        '5-1': 30, '5-2': 8, '5-3': 1, '5-4': 8, '5-5': 1
+                    };
+                    
+                    // Restaurer les quantités par défaut
+                    Object.keys(defaultQuantities).forEach(key => {
+                        const input = document.querySelector(`.quantity-input[data-row="${key}"]`);
+                        if (input) {
+                            input.value = defaultQuantities[key];
+                        }
+                    });
+                    
+                    // Restaurer les prix par défaut
+                    Object.keys(defaultValues).forEach(key => {
+                        const input = document.querySelector(`.amount-input[data-row="${key}"]`);
+                        if (input) {
+                            input.value = defaultValues[key];
+                            APP.calculateRow(input);
+                        }
+                    });
+                    
+                    // Réinitialiser toutes les checkboxes
+                    document.querySelectorAll('.hide-checkbox').forEach(checkbox => {
+                        checkbox.checked = true;
+                        APP.toggleRow(checkbox);
+                    });
+                    
+                    // Réinitialiser les taux
+                    APP.state.rates.admin = CONFIG.DEFAULT_RATES.ADMIN;
+                    APP.state.rates.contingency = CONFIG.DEFAULT_RATES.CONTINGENCY;
+                    APP.state.rates.profit = CONFIG.DEFAULT_RATES.PROFIT;
+                    
+                    document.getElementById('adminRate').value = APP.state.rates.admin * 100;
+                    document.getElementById('contingencyRate').value = APP.state.rates.contingency * 100;
+                    document.getElementById('profitRate').value = APP.state.rates.profit * 100;
+                    
+                    // Recalculer tout
+                    APP.calculateAll();
+                    
+                    // Supprimer du localStorage
+                    if (APP.utils.isLocalStorageAvailable()) {
+                        localStorage.removeItem('soumission_revetements_data');
+                    }
+                    
+                    APP.utils.showLoading(false);
+                    APP.utils.showNotification('✔ Réinitialisation complète');
+                } catch (error) {
+                    console.error('Erreur lors de la réinitialisation:', error);
+                    APP.utils.showNotification('⚠️ Erreur lors de la réinitialisation', true);
+                    APP.utils.showLoading(false);
+                }
+            }
+        };
+
+        // Initialisation au chargement du DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            APP.init();
+        });
+
+        // Exposition globale pour les événements onclick
+        window.APP = APP;
+    </script>
+</body>
+</html>
