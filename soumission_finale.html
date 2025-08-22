@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumission - Revêtements Extérieurs - Groupe Perreault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4b5563;
+            padding-bottom: 15px;
+        }
+
+        .company-info {
+            text-align: right;
+            font-size: 11px;
+        }
+
+        .company-name {
+            font-weight: bold;
+            font-size: 14px;
+            color: #4b5563;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            color: #4b5563;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4b5563;
+        }
+
+        .info-box h4 {
+            font-weight: bold;
+            color: #4b5563;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 11px;
+        }
+
+        .table th {
+            background: #4b5563;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .category-header {
+            background: #e5e7eb !important;
+            font-weight: bold;
+            color: #4b5563;
+            font-size: 12px;
+        }
+
+        .subtotal-row {
+            background: #f3f4f6 !important;
+            font-weight: bold;
+        }
+
+        .item-description {
+            font-weight: bold;
+        }
+
+        .item-details {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        input[type="number"], input[type="text"] {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 11px;
+            width: 100%;
+        }
+
+        input[type="number"]:focus, input[type="text"]:focus {
+            border-color: #4b5563;
+            outline: none;
+        }
+
+        .summary {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #4b5563;
+            margin-top: 30px;
+        }
+
+        .summary h3 {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .summary-table {
+            width: 100%;
+        }
+
+        .summary-table td {
+            padding: 5px 10px;
+            border: none;
+        }
+
+        .total-row {
+            border-top: 2px solid #4b5563;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .control-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background: #4b5563;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 12px;
+        }
+
+        .btn:hover {
+            background: #374151;
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; padding: 0.3in; }
+            .control-buttons { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Boutons de contrôle -->
+        <div class="control-buttons">
+            <button class="btn" onclick="calculateAll()">💰 Recalculer</button>
+            <button class="btn" onclick="window.print()">🖨️ Imprimer</button>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div></div>
+            <div class="company-info">
+                <div class="company-name">Groupe Perreault</div>
+                <div>103, rue Normandie</div>
+                <div>Repentigny (Québec) J6A 6B9</div>
+                <div>C: 514.927.5932 | T: 514.589.5932</div>
+                <div>info@groupeperreault.ca</div>
+                <div>RBQ : 5763-7159-01</div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="title">SOUMISSION - REVÊTEMENTS EXTÉRIEURS</h1>
+        <div class="subtitle">Soumission #2025-REV-001</div>
+
+        <!-- Project Info -->
+        <div class="project-info">
+            <div class="info-box">
+                <h4>Soumission pour:</h4>
+                <p>Projet résidentiel 16 logements</p>
+                <p>À déterminer</p>
+                <p>St-Félix-de-Valois (Québec) J0K 2M0</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>Projet</h4>
+                <p>Revêtements extérieurs complets</p>
+                <p>Multi-logements (16 unités)</p>
+                <p>Superficie totale: 6,960 pi²</p>
+                <p>Durée: 5 sem</p>
+                <p>Type: Canexel (88.7%) + Brique (11.3%)</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>Contact Principal</h4>
+                <p>[Nom du contact], [Titre]</p>
+                <p>C: 514.927.5932 | T: 514.589.5932</p>
+                <p>info@groupeperreault.ca</p>
+                <p>Chargé de projet: [Nom]</p>
+            </div>
+        </div>
+
+        <!-- Section 1: Matériaux de Revêtement -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 50%">Item</th>
+                    <th style="width: 12%">Quantité</th>
+                    <th style="width: 15%">Coût unitaire</th>
+                    <th style="width: 15%">Coût total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-header">
+                    <td colspan="4">1.0 - MATÉRIAUX DE REVÊTEMENT</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Canexel couleur Granite</div>
+                        <div class="item-details">Revêtement principal - 4,425 pi² (63.6% du projet)</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="4425" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="7.50" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">33,187.50$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Canexel couleur Bois</div>
+                        <div class="item-details">Revêtement secondaire - 1,749 pi² (25.1% du projet)</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1749" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="7.50" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">13,117.50$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Accessoires Canexel</div>
+                        <div class="item-details">Coins, moulures, jonctions (15% des matériaux)</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="6946" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">6,946.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Brique grise standard</div>
+                        <div class="item-details">463 pi² (6.7% du projet) - Façades avant et latérales</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="463" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="8.50" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">3,935.50$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Brique grise très pâle</div>
+                        <div class="item-details">323 pi² (4.6% du projet) - Façades avant et arrière</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="323" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="9.50" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">3,068.50$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Mortier et attaches pour maçonnerie</div>
+                        <div class="item-details">Mortier Type N (55 sacs) + Attaches inox (3,930 unités)</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="2563" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">2,563.00$</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td colspan="3">Sous-total Matériaux de Revêtement</td>
+                    <td class="text-right" id="subtotal1">62,818.00$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 2: Système d'Enveloppe et Isolation -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 50%">Item</th>
+                    <th style="width: 12%">Quantité</th>
+                    <th style="width: 15%">Coût unitaire</th>
+                    <th style="width: 15%">Coût total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-header">
+                    <td colspan="4">2.0 - SYSTÈME D'ENVELOPPE ET ISOLATION</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Membrane pare-air Tyvek CommercialWrap</div>
+                        <div class="item-details">7,500 pi² - Protection complète de l'enveloppe</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="7500" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="0.35" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">2,625.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Membrane de drainage (derrière brique)</div>
+                        <div class="item-details">850 pi² pour sections de maçonnerie</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="850" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="0.50" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">425.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Isolation XPS R-4 panneaux rigides</div>
+                        <div class="item-details">7,200 pi² - Isolation thermique continue</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="7200" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="1.85" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">13,320.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Fourrures et système de fixation</div>
+                        <div class="item-details">Fourrures 1"x3" traité + vis et fixations spécialisées</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="4040" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">4,040.00$</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td colspan="3">Sous-total Système d'Enveloppe</td>
+                    <td class="text-right" id="subtotal2">20,410.00$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 3: Composantes Additionnelles -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 50%">Item</th>
+                    <th style="width: 12%">Quantité</th>
+                    <th style="width: 15%">Coût unitaire</th>
+                    <th style="width: 15%">Coût total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-header">
+                    <td colspan="4">3.0 - COMPOSANTES ADDITIONNELLES</td>
+                </tr>
+                <tr data-section="3" data-row="0">
+                    <td>
+                        <div class="item-description">Solins de tête et de base</div>
+                        <div class="item-details">320 pi.lin. solins tête + 280 pi.lin. solins base</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="600" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="11.07" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">6,642.00$</td>
+                </tr>
+                <tr data-section="3" data-row="1">
+                    <td>
+                        <div class="item-description">Chantepleures et coins métalliques</div>
+                        <div class="item-details">40 chantepleures + 48 coins préformés</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="88" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="14.55" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">1,280.40$</td>
+                </tr>
+                <tr data-section="3" data-row="2">
+                    <td>
+                        <div class="item-description">Calfeutrage polyuréthane et fond de joint</div>
+                        <div class="item-details">36 tubes calfeutrant + 400 pi.lin. fond de joint</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="704" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">704.00$</td>
+                </tr>
+                <tr data-section="3" data-row="3">
+                    <td>
+                        <div class="item-description">Pierre décorative (base du bâtiment)</div>
+                        <div class="item-details">800 pi² - Finition architecturale de prestige</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="800" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="14.00" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">11,200.00$</td>
+                </tr>
+                <tr data-section="3" data-row="4">
+                    <td>
+                        <div class="item-description">Soffites et fascias en aluminium</div>
+                        <div class="item-details">650 pi.lin. - Finition complète des débords de toit</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="650" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="28.00" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">18,200.00$</td>
+                </tr>
+                <tr data-section="3" data-row="5">
+                    <td>
+                        <div class="item-description">Gouttières et descentes pluviales</div>
+                        <div class="item-details">Système complet aluminium 5" avec accessoires</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="8760" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">8,760.00$</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td colspan="3">Sous-total Composantes Additionnelles</td>
+                    <td class="text-right" id="subtotal3">46,786.40$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 4: Main-d'œuvre Spécialisée -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 50%">Item</th>
+                    <th style="width: 12%">Quantité</th>
+                    <th style="width: 15%">Coût unitaire</th>
+                    <th style="width: 15%">Coût total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-header">
+                    <td colspan="4">4.0 - MAIN-D'ŒUVRE SPÉCIALISÉE</td>
+                </tr>
+                <tr data-section="4" data-row="0">
+                    <td>
+                        <div class="item-description">Installation Canexel</div>
+                        <div class="item-details">2 installateurs (310h) + 1 manœuvre (155h) - 6,174 pi²</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="465" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="64.60" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">30,042.25$</td>
+                </tr>
+                <tr data-section="4" data-row="1">
+                    <td>
+                        <div class="item-description">Maçonnerie (brique)</div>
+                        <div class="item-details">2 maçons (196h) + 1 manœuvre (98h) - 786 pi²</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="294" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="73.33" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">21,559.02$</td>
+                </tr>
+                <tr data-section="4" data-row="2">
+                    <td>
+                        <div class="item-description">Préparation et finition</div>
+                        <div class="item-details">Membranes (40h) + Fourrures (60h) + Solins/calfeutrage (80h)</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="180" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="38.89" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">7,000.20$</td>
+                </tr>
+                <tr data-section="4" data-row="3">
+                    <td>
+                        <div class="item-description">Supervision et contremaître</div>
+                        <div class="item-details">96 heures @ 55$/h - Coordination et contrôle qualité</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="96" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="55.00" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">5,280.00$</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td colspan="3">Sous-total Main-d'œuvre</td>
+                    <td class="text-right" id="subtotal4">63,881.47$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 5: Équipements et Frais Connexes -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 50%">Item</th>
+                    <th style="width: 12%">Quantité</th>
+                    <th style="width: 15%">Coût unitaire</th>
+                    <th style="width: 15%">Coût total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-header">
+                    <td colspan="4">5.0 - ÉQUIPEMENTS ET FRAIS CONNEXES</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Échafaudages modulaires</div>
+                        <div class="item-details">6 sections 5'x5' pour 5 semaines</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="30" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="60.00" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">1,800.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Nacelle articulée 45'</div>
+                        <div class="item-details">Location 8 jours pour zones difficiles d'accès</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="8" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="450.00" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">3,600.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Monte-matériaux et outils spécialisés</div>
+                        <div class="item-details">Location 3 semaines + outils de coupe spécialisés</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="2600" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">2,600.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Transport et manutention</div>
+                        <div class="item-details">8 livraisons de matériaux @ 350$/voyage</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="8" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="350.00" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">2,800.00$</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="item-description">Gestion des déchets et protection</div>
+                        <div class="item-details">Conteneur 4 semaines + bâches + équipement sécurité</div>
+                    </td>
+                    <td class="text-center"><input type="number" value="1" onchange="calculateRow(this)"></td>
+                    <td class="text-right"><input type="number" value="2700" step="0.01" onchange="calculateRow(this)"></td>
+                    <td class="text-right amount-display">2,700.00$</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td colspan="3">Sous-total Équipements</td>
+                    <td class="text-right" id="subtotal5">13,500.00$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Récapitulatif -->
+        <div class="summary">
+            <h3>📊 RÉCAPITULATIF DES COÛTS</h3>
+            <table class="summary-table">
+                <tr>
+                    <td>1.0 - Matériaux de Revêtement:</td>
+                    <td class="text-right" id="recap1">62,818.00$</td>
+                </tr>
+                <tr>
+                    <td>2.0 - Système d'Enveloppe:</td>
+                    <td class="text-right" id="recap2">20,410.00$</td>
+                </tr>
+                <tr>
+                    <td>3.0 - Composantes Additionnelles:</td>
+                    <td class="text-right" id="recap3">46,786.40$</td>
+                </tr>
+                <tr>
+                    <td>4.0 - Main-d'œuvre Spécialisée:</td>
+                    <td class="text-right" id="recap4">63,881.47$</td>
+                </tr>
+                <tr>
+                    <td>5.0 - Équipements et Frais Connexes:</td>
+                    <td class="text-right" id="recap5">13,500.00$</td>
+                </tr>
+                <tr>
+                    <td><strong>TOTAL DES COÛTS DIRECTS:</strong></td>
+                    <td class="text-right" id="totalDirect"><strong>207,395.87$</strong></td>
+                </tr>
+                <tr>
+                    <td>Frais généraux (12%):</td>
+                    <td class="text-right" id="fraisGeneraux">24,887.50$</td>
+                </tr>
+                <tr>
+                    <td>Contingences (8%):</td>
+                    <td class="text-right" id="contingences">16,591.67$</td>
+                </tr>
+                <tr>
+                    <td>Profit de l'entrepreneur (15%):</td>
+                    <td class="text-right" id="profit">31,109.38$</td>
+                </tr>
+                <tr>
+                    <td><strong>Total avant taxes:</strong></td>
+                    <td class="text-right" id="totalAvantTaxes"><strong>279,984.42$</strong></td>
+                </tr>
+                <tr>
+                    <td>TPS (5%):</td>
+                    <td class="text-right" id="tps">13,999.22$</td>
+                </tr>
+                <tr>
+                    <td>TVQ (9.975%):</td>
+                    <td class="text-right" id="tvq">27,928.44$</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>INVESTISSEMENT TOTAL:</strong></td>
+                    <td class="text-right" id="totalFinal"><strong>321,912.08$</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function calculateRow(input) {
+            const row = input.closest('tr');
+            const quantityInput = row.querySelector('input[type="number"]:nth-of-type(1)');
+            const priceInput = row.querySelector('input[type="number"]:nth-of-type(2)');
+            const totalCell = row.querySelector('.amount-display');
+            
+            if (quantityInput && priceInput && totalCell) {
+                const quantity = parseFloat(quantityInput.value) || 0;
+                const price = parseFloat(priceInput.value) || 0;
+                const total = quantity * price;
+                totalCell.textContent = formatMoney(total);
+            }
+            
+            calculateAll();
+        }
+
+        function calculateAll() {
+            // Calculer les sous-totaux de chaque section
+            const subtotals = [];
+            
+            for (let i = 1; i <= 5; i++) {
+                const subtotalElement = document.getElementById(`subtotal${i}`);
+                if (subtotalElement) {
+                    const table = subtotalElement.closest('table');
+                    const rows = table.querySelectorAll('tbody tr:not(.category-header):not(.subtotal-row)');
+                    let sectionTotal = 0;
+                    
+                    rows.forEach(row => {
+                        const totalCell = row.querySelector('.amount-display');
+                        if (totalCell) {
+                            const amount = parseFloat(totalCell.textContent.replace(/[$,]/g, '')) || 0;
+                            sectionTotal += amount;
+                        }
+                    });
+                    
+                    subtotalElement.textContent = formatMoney(sectionTotal);
+                    subtotals.push(sectionTotal);
+                    
+                    // Mettre à jour le récapitulatif
+                    const recapElement = document.getElementById(`recap${i}`);
+                    if (recapElement) {
+                        recapElement.textContent = formatMoney(sectionTotal);
+                    }
+                }
+            }
+            
+            // Calculer les totaux
+            const totalDirect = subtotals.reduce((sum, val) => sum + val, 0);
+            const fraisGeneraux = totalDirect * 0.12;
+            const contingences = totalDirect * 0.08;
+            const profit = totalDirect * 0.15;
+            const totalAvantTaxes = totalDirect + fraisGeneraux + contingences + profit;
+            const tps = totalAvantTaxes * 0.05;
+            const tvq = totalAvantTaxes * 0.09975;
+            const totalFinal = totalAvantTaxes + tps + tvq;
+            
+            // Mettre à jour l'affichage
+            document.getElementById('totalDirect').textContent = formatMoney(totalDirect);
+            document.getElementById('fraisGeneraux').textContent = formatMoney(fraisGeneraux);
+            document.getElementById('contingences').textContent = formatMoney(contingences);
+            document.getElementById('profit').textContent = formatMoney(profit);
+            document.getElementById('totalAvantTaxes').textContent = formatMoney(totalAvantTaxes);
+            document.getElementById('tps').textContent = formatMoney(tps);
+            document.getElementById('tvq').textContent = formatMoney(tvq);
+            document.getElementById('totalFinal').textContent = formatMoney(totalFinal);
+        }
+
+        function formatMoney(amount) {
+            return new Intl.NumberFormat('fr-CA', {
+                style: 'currency',
+                currency: 'CAD',
+                minimumFractionDigits: 2
+            }).format(amount).replace('CA$', '') + '$';
+        }
+
+        // Initialiser les calculs au chargement
+        document.addEventListener('DOMContentLoaded', calculateAll);
+    </script>
+</body>
+</html>
